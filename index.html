@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14213d" />
+  <title>Atmos — Live Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="day">
+  <div class="ambient" aria-hidden="true">
+    <div class="orb"></div><div class="orb two"></div><div class="stars" id="stars"></div>
+    <div class="rain" id="rain"></div><div class="snow" id="snow"></div>
+  </div>
+  <main class="wrap">
+    <header>
+      <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42 1.42"/><circle cx="12" cy="12" r="4"/></svg></span> atmos<span style="opacity:.65">.</span></div>
+      <div class="live">Live weather</div>
+    </header>
+    <section class="intro">
+      <div class="eyebrow">Your world, right now</div>
+      <h1>Feel the atmosphere.</h1>
+      <p class="sub">A little closer to the sky, wherever you are.</p>
+      <form class="search" id="searchForm">
+        <input id="cityInput" type="text" placeholder="Enter any city — e.g. Tokyo, London..." autocomplete="off" required />
+        <button id="searchBtn" type="submit">Explore weather</button>
+      </form>
+      <div class="message" id="message" role="status">Try searching for a city to see its live weather.</div>
+    </section>
+
+    <section class="weather-card" aria-live="polite">
+      <div class="place-row">
+        <div><h2 class="city" id="cityName">Faisalabad, Pakistan</h2><div class="date" id="localDate">Loading local time…</div></div>
+        <div class="condition-pill" id="dayLabel">☀ Daytime</div>
+      </div>
+      <div class="main-weather">
+        <div>
+          <div class="temp-block"><div class="temperature" id="temperature">--</div><div class="degree">°C</div></div>
+          <div class="description" id="description">Getting the latest conditions</div>
+        </div>
+        <div class="weather-art" id="weatherArt" aria-hidden="true"></div>
+      </div>
+      <div class="details">
+        <div class="detail"><div class="detail-icon">🌡</div><div><div class="detail-label">Feels like</div><div class="detail-value" id="feels">--°</div></div></div>
+        <div class="detail"><div class="detail-icon">💧</div><div><div class="detail-label">Humidity</div><div class="detail-value" id="humidity">--%</div></div></div>
+        <div class="detail"><div class="detail-icon">💨</div><div><div class="detail-label">Wind speed</div><div class="detail-value" id="wind">-- km/h</div></div></div>
+        <div class="detail"><div class="detail-icon">☁</div><div><div class="detail-label">Cloud cover</div><div class="detail-value" id="cloud">--%</div></div></div>
+      </div>
+    </section>
+    <div class="footer">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · Made for curious skies</div>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
